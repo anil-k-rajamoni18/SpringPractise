@@ -27,7 +27,16 @@ public class StudentController {
     }
 
     @PostMapping(path="/createStudent")
-    public void registerNewStudent(@RequestBody Student student){
+    public String registerNewStudent(@RequestBody Student student){
         studentService.addStudent(student);
+
+        return "Inserted successfully";
+    }
+
+
+    @DeleteMapping("/deleteStudent/{studentId}")
+    public String deleteStudent(@PathVariable("studentId") Long id){
+        studentService.deleteStudent(id);
+        return "Deleted successfully";
     }
 }
