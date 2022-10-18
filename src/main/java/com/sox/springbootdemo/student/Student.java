@@ -1,6 +1,7 @@
 package com.sox.springbootdemo.student;
 
 import javax.persistence.*;
+import javax.transaction.Transactional;
 import java.time.LocalDate;
 import java.time.Period;
 
@@ -94,4 +95,5 @@ public class Student {
     public void setAge(Integer age) {
         this.age = age;
     }
+
 }
